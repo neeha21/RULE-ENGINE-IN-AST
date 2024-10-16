@@ -4,3 +4,10 @@ type: A string indicating the node type, either "operator" for AND/OR or "operan
 left: A reference to another Node, representing the left child.
 right: A reference to another Node, representing the right child for operators.
 value: An optional value for operand nodes, such as a number for comparisons.
+
+class Node:
+    def __init__(self, type, left=None, right=None, value=None):
+        self.type = type
+        self.left = left
+        self.right = right
+        self.value = value
