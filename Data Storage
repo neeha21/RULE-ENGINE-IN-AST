@@ -1,0 +1,23 @@
+For storing the rules and application metadata, I recommend using a relational database management system like PostgreSQL. We can define the following schema:
+
+rules table:
+id (primary key): A unique identifier for each rule.
+rule_string: The string representation of the rule.
+ast: The serialized AST representation of the rule.
+application_metadata table:
+id (primary key): A unique identifier for each application metadata.
+key: The key for the metadata (e.g., "department").
+value: The value for the metadata (e.g., "Sales").
+
+#SQL
+CREATE TABLE rules (
+    id SERIAL PRIMARY KEY,
+    rule_string VARCHAR(255) NOT NULL,
+    ast BYTEA NOT NULL
+);
+
+CREATE TABLE application_metadata (
+    id SERIAL PRIMARY KEY,
+    key VARCHAR(50) NOT NULL,
+    value VARCHAR(255) NOT NULL
+);
